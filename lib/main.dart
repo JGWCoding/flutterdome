@@ -8,6 +8,7 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutterdome/page_splash.dart';
+import 'package:flutterdome/ui/page_main.dart';
 import 'package:flutterdome/util/Adapt.dart';
 import 'package:flutterdome/view.dart';
 
@@ -235,7 +236,7 @@ class Bottom extends StatelessWidget {
                   padding: EdgeInsets.all(5.0),
                   alignment: Alignment.topRight,
                   child: FlatButton(
-                      onPressed: login(),
+                      onPressed: login(context),
                       child: Text(
                         "忘記密碼?",
                         style: TextStyle(
@@ -254,7 +255,7 @@ class Bottom extends StatelessWidget {
                   margin:
                       EdgeInsets.only(top: 20, left: 30, right: 30, bottom: 10),
                   child: MaterialButton(
-                    onPressed: login(),
+                    onPressed: login(context),
                     child: Text(
                       "登       入",
                       style: TextStyle(
@@ -273,7 +274,7 @@ class Bottom extends StatelessWidget {
                   margin:
                       EdgeInsets.only(top: 5, left: 30, right: 30, bottom: 40),
                   child: MaterialButton(
-                    onPressed: login(),
+                    onPressed: login(context),
                     child: Text(
                       "註       冊",
                       style: TextStyle(
@@ -287,7 +288,12 @@ class Bottom extends StatelessWidget {
         ));
   }
 
-  login() {}
+  login(BuildContext context) {
+    MaterialPageRoute(builder: (context) => new MainPage());
+//    Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+//      return new MainPage();
+//    }));
+  }
 }
 
 class ChangeView extends StatefulWidget {
