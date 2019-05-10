@@ -289,10 +289,10 @@ class Bottom extends StatelessWidget {
   }
 
   login(BuildContext context) {
-    MaterialPageRoute(builder: (context) => new MainPage());
-//    Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
-//      return new MainPage();
-//    }));
+//    MaterialPageRoute(builder: (context) => new MainPage());
+    Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+      return new MainPage();
+    }));
   }
 }
 
